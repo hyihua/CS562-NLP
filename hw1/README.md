@@ -41,6 +41,7 @@
 2. Number of unigram tokens: 16676531
 
 3. Plot: 
-![Plot](https://github.com/hyihua/CS562-NLP/blob/main/hw1/zipf_law.png)
+
+	![Plot](https://github.com/hyihua/CS562-NLP/blob/main/hw1/zipf_law.png)
 
 
