@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
 import argparse
-import collections
 import numpy as np
 import matplotlib.pyplot as plt
+from nltk import FreqDist
+from nltk.tokenize import word_tokenize
 
 
 parser = argparse.ArgumentParser(description = 'Word counting -- token & type')
@@ -14,7 +15,8 @@ args = parser.parse_args()
 if __name__ == "__main__":
 	with open(args.input, 'r') as f:
 		text = f.read()
-	result = collections.Counter(text.split())
+	tokens = word_tokenize(text)
+	result = FreqDist(tokens)
 	dict_token = dict(result)
 	sort_token = sorted(dict_token.items(), key = lambda item: item[1], reverse = True)
 	
@@ -25,8 +27,8 @@ if __name__ == "__main__":
 	plt.loglog(ranks, freq, marker = '.')
 	plt.title('Zipf plot for GW-cna_eng corpus')
 	plt.grid(True)
-	plt.xlabel('Rank of tokens')
-	plt.ylabel('Frequence of tokens')
+	plt.xlabel('Rank of tokens (log)')
+	plt.ylabel('Frequence of tokens (log)')
 	
 	plt.savefig('zipf_law.png')
 	rank_30 = [i[0] for i in sort_token[:30]]

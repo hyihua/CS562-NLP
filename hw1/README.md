@@ -44,4 +44,20 @@
 
 	![Plot](https://github.com/hyihua/CS562-NLP/blob/main/hw1/zipf_law.png)
 
+4. The thirty most common words: ['THE', 'TO', 'OF', 'AND', 'IN', 'A', 'THAT', 'TAIWAN', "'S", 'SAID', 'FOR', 'ON', 'WILL', 'WITH', 'IS', 'AT', 'AS', 'BY', 'HE', 'BE', 'FROM', 'HAS', 'CHINA', 'WAS', 'AN', 'PERCENT', 'ITS', 'HAVE', 'IT', 'NOT']. We see there is a token "'S" in this list which is not a word. This situation occurs because function word_tokenize will separate contractions (somebody_name's, I'll) into different words. In this case, I will replace function word_tokenize with other functions which could separate contractions like I expect, such as function TweetTokenizer from nltk.tokenize.
+
+5. Number of unique types (filtered text): 143156
+   Number of unigram tokens (filtered text): 10295204
+
+   Compared the above numbers with question 1, we could easily find that although the numbers of unique types have little difference, the number of unigram tokens after removing stopwords is a lot less than the original number.
+
+6. The thirty most common words after removing stopwords: ['TAIWAN', "'S", 'SAID', 'CHINA', 'PERCENT', 'GOVERNMENT', 'ALSO', 'CHEN', 'PRESIDENT', 'YEAR', 'TAIPEI', 'NT', 'TWO', 'MAINLAND', 'PEOPLE', 'US', 'NEW', 'CHINESE', 'ACCORDING', 'PARTY', 'ECONOMIC', 'BILLION', 'FIRST', 'NATIONAL', 'ONE', 'FOREIGN', 'WOULD', 'INTERNATIONAL', 'OFFICIALS', 'CITY']. 
+	 About the stopwords list, I think this list is pretty complete so far. The entries in the list are very common and I cannot come up with other words to add into the list.
+	 To buiia a stopwords list, it is necessary to start from the dataset itself (corpus) that is used. It might be no hurt to try to use the default stopwords list first, and then the designer should select other words that have very high occurrence frequencies from related corpus.
+
+### Word association metrics
+
+
+
+
 
