@@ -25,8 +25,8 @@ if __name__ == "__main__":
 	plt.loglog(ranks, freq, marker = '.')
 	plt.title('Zipf plot for GW-cna_eng corpus')
 	plt.grid(True)
-	plt.xlabel('Rank of token')
-	plt.ylabel('Frequence of token')
+	plt.xlabel('Rank of tokens')
+	plt.ylabel('Frequence of tokens')
 	
 	plt.savefig('zipf_law.png')
 	rank_30 = [i[0] for i in sort_token[:30]]
