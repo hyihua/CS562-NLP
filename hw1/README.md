@@ -30,7 +30,7 @@
    
 ## Part 2: Structuring the data
 
-585064.
+	585064.
 
 ## Part 3: Counting and comparing
 
@@ -39,5 +39,8 @@
 1. Number of unique types: 143294
 
 2. Number of unigram tokens: 16676531
+
+3. Plot: 
+![Plot]()
 
 
