@@ -77,13 +77,19 @@
 
 ### Word association metrics
 
+For this part, before doing any analysis, I remove the stopwords in this corpus because I think those words are not important and they account for a large proportion of this corpus. If I keep them, it would take more time and resource to calculate the PMI values and other numbers.
+
 1. Examine the 30 highest-PMI word pairs, along with their unigram and bigram frequencies. What do you notice?
 
 	 These word pairs do not make sense. Although they have very high PMI, their bigram frequencies are very small. (all of them are 1 in this corpus.)
 
 2. Experiment with a few different threshold values, and report on what you observe.
 
-	 In this assignment, I use several thresholds (thresholds = [30, 70, 100, 130, 170, 200, 230, 270, 300, 400]). From the output result, we could easily find that the bigger the threshold given a threshold value between [1, 100]
+	 In this assignment, I use several thresholds (thresholds = [30, 70, 100, 130, 170, 200, 230, 270, 300, 400]). From the output result, we could easily find that the bigger the threshold, the lower the PMI value. Given a threshold value between [1, 100), the word pairs are still not common and they have higher PMI values due to their low word frequencies. If we increase the value of threshold to [100, 200), we could see some familiar
+
+3. With a threshold of 100, what are the 10 highest-PMI word pairs?
+
+4. Examine the PMI for “New York”. Explain in your own words why it is not higher.
 
 
 

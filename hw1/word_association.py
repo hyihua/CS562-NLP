@@ -7,16 +7,16 @@ from nltk import FreqDist
 import nltk
 from nltk.corpus import stopwords
 	
-def all_u_prob(u_freqdist, length):
+def all_u_prob(u_freqdist, u_len):
 	u_prob_dict = {}
 	for word in u_freqdist.keys():
-		u_prob_dict[word] = u_freqdist[word] / length
+		u_prob_dict[word] = u_freqdist[word] / u_len
 	return u_prob_dict
 	
-def all_b_prob(b_freqdist, length):
+def all_b_prob(b_freqdist, b_len):
 	b_prob_dict = {}
 	for b in b_freqdist.keys():
-		b_prob_dict[b] = b_freqdist[b] / length
+		b_prob_dict[b] = b_freqdist[b] / b_len
 	return b_prob_dict
 	
 def all_pmi(b_freqdist, bi_length, u_freqdist, uni_length):
@@ -26,7 +26,7 @@ def all_pmi(b_freqdist, bi_length, u_freqdist, uni_length):
 	for b in all_b_list.keys():
 		word1_word2_p = all_b_list[b]
 		word1_p = all_u_list[b[0]]
-		word2_p = all_u_list[b[0]]
+		word2_p = all_u_list[b[1]]
 		pmi_dict[b] = word1_word2_p / (word1_p * word2_p)
 	return pmi_dict
 	
@@ -46,10 +46,8 @@ if __name__ == "__main__":
 	b_tokens = nltk.bigrams(u_tokens)
 	b_freq = dict(FreqDist(b_tokens))
 	
-	print(len(u_tokens), len(list(nltk.bigrams(u_tokens))))
 	print('The 30 highest-PMI word pairs, along with their unigram and bigram frequencies. ')
 	
-
 	result_pmi = all_pmi(b_freq, len(list(nltk.bigrams(u_tokens))), u_freq, len(u_tokens))
 	sort_pmi = sorted(result_pmi.items(), key = lambda item: item[1], reverse = True)
 	pmi_30 = sort_pmi[:30]
@@ -62,7 +60,7 @@ if __name__ == "__main__":
 		print('The 10 hightest-PMI word pairs if bigram frequency is higher than ', str(t))
 		count = 0
 		for p in sort_pmi:
-			if count > 10:
+			if count >= 10:
 				break
 			if b_freq[p[0]] > t:
 				print("Word pairs: ", p[0], ', PMI: ', p[1], ', Unigram frequency: ', str(u_freq[p[0][0]]), str(u_freq[p[0][1]]), ', Bigram frequencies: ', str(b_freq[p[0]]))
