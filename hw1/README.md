@@ -85,11 +85,40 @@ For this part, before doing any analysis, I remove the stopwords in this corpus 
 
 2. Experiment with a few different threshold values, and report on what you observe.
 
-	 In this assignment, I use several thresholds (thresholds = [30, 70, 100, 130, 170, 200, 230, 270, 300, 400]). From the output result, we could easily find that the bigger the threshold, the lower the PMI value. Given a threshold value between [1, 100), the word pairs are still not common and they have higher PMI values due to their low word frequencies. If we increase the value of threshold to [100, 200), we could see some familiar
+	 In this assignment, I use several thresholds (thresholds = [30, 70, 100, 130, 170, 200, 230, 270, 300, 400]). From the output result, we could easily find that the bigger the threshold, the lower the PMI value. Given a threshold value between [1, 100], the word pairs are mostly not common and they have higher PMI values due to their low word frequencies. If we increase the value of threshold to (100, 200], we could see some familiar word pairs such as "POUND STERLING". And then if the value is up to (200, 400], we can find that most of the word pairs are relatively common. In other words, as the value of threshold increases, the word pairs that we obtain will be more common.
 
 3. With a threshold of 100, what are the 10 highest-PMI word pairs?
 
+	 The 10 hightest-PMI word pairs if bigram frequency is higher than  100
+	 
+	 Word pairs:  ('SPONGIFORM', 'ENCEPHALOPATHY') , PMI:  96208.30589177735 , Unigram frequency:  106 106 , Bigram frequencies:  105
+	 
+	 Word pairs:  ('YING-', 'JEOU') , PMI:  76640.81487633885 , Unigram frequency:  126 129 , Bigram frequencies:  121
+	 
+	 Word pairs:  ('BOVINE', 'SPONGIFORM') , PMI:  75786.60055746214 , Unigram frequency:  132 106 , Bigram frequencies:  103
+	 
+	 Word pairs:  ('ALMA', 'MATER') , PMI:  74371.96594427315 , Unigram frequency:  136 114 , Bigram frequencies:  112
+	 
+	 Word pairs:  ('SRI', 'LANKA') , PMI:  68982.24413073565 , Unigram frequency:  147 133 , Bigram frequencies:  131
+	 
+	 Word pairs:  ('TOME', 'PRINCIPE') , PMI:  51946.99018207289 , Unigram frequency:  197 167 , Bigram frequencies:  166
+	 
+	 Word pairs:  ('KUALA', 'LUMPUR') , PMI:  49730.53254579414 , Unigram frequency:  206 203 , Bigram frequencies:  202
+	 
+	 Word pairs:  ('SAO', 'TOME') , PMI:  46343.70606263811 , Unigram frequency:  212 197 , Bigram frequencies:  188
+	 
+	 Word pairs:  ('AU', 'OPTRONICS') , PMI:  43711.84228240087 , Unigram frequency:  217 178 , Bigram frequencies:  164
+	 
+	 Word pairs:  ('ERIC', 'LILUAN') , PMI:  42643.58707312753 , Unigram frequency:  238 141 , Bigram frequencies:  139
+	 
+
 4. Examine the PMI for “New York”. Explain in your own words why it is not higher.
+
+	 Word pair: NEW YORK
+	 
+	 PMI:  325.8864252413733 , Unigram frequency:  31251 1949 , Bigram frequencies:  1928
+	 
+	 Observed the data above, we can easily find that the bigram frequency (1928) of this word pair is very close to the unigram frequency (1949) of word "York", which means that this word is often used with "New". However, the unigram frequency (31251) of word "New" is larger almost as 16 times as the bigram frequency, and that indicates this word "New" is more common and it will be often used with other words. In this case, the PMI value of word pair "New York" is not higher.
 
 
 
