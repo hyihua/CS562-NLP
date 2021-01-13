@@ -36,7 +36,7 @@
 
 1. How many sentences are there in the CNA-GW corpus?
 
-	 585064.
+   585064.
 
 ## Part 3: Counting and comparing
 
@@ -44,7 +44,7 @@
 
 1. How many unique types are present in this corpus? 
 
-   143294.
+    143294.
 
 2. How many unigram tokens?
 
@@ -82,6 +82,8 @@
 	 These word pairs do not make sense. Although they have very high PMI, their bigram frequencies are very small. (all of them are 1 in this corpus.)
 
 2. Experiment with a few different threshold values, and report on what you observe.
+
+	 In this assignment, I use several thresholds (thresholds = [30, 70, 100, 130, 170, 200, 230, 270, 300, 400]). From the output result, we could easily find that the bigger the threshold given a threshold value between [1, 100]
 
 
 
