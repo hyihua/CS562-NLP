@@ -2,6 +2,12 @@
 
 ## Part 1: Reading some data
 
+Python file used in this part: deserialization.py
+
+Output files: deserialized.txt first_100_lines.txt
+
+______________________________________________________________________________________________________________________________________________________________________________
+
 1. Python file 'deserialization.py' is to decompress and serialize the XML files. 
 
 	Firstly, download the data files by a command * wget -c -r -nd -k -L -p https://cslu.ohsu.edu/~bedricks/courses/cs662/resources/GW-cna_eng/ * in the * data/ * folder.
@@ -34,6 +40,12 @@
    
 ## Part 2: Structuring the data
 
+Python file used in this part: sent_word_tokenize.py 
+
+Output file: word_tokenize.txt
+
+______________________________________________________________________________________________________________________________________________________________________________
+
 1. How many sentences are there in the CNA-GW corpus?
 
    585064.
@@ -42,9 +54,15 @@
 
 ### Word counting & distribution
 
+Python files used in this part: token_type.py plot.py remove_stopwords.py
+
+Output file: zipf_law.png
+
+______________________________________________________________________________________________________________________________________________________________________________
+
 1. How many unique types are present in this corpus? 
 
-    143294.
+   143294.
 
 2. How many unigram tokens?
 
@@ -63,7 +81,8 @@
 5. What happens to your type/token counts if you remove stopwords using nltk.corpora’s stopwords list? 
 
 	 Number of unique types (filtered text): 143156
-   Number of unigram tokens (filtered text): 10295204
+	 
+   	 Number of unigram tokens (filtered text): 10295204
 
    Compared the above numbers with question 1, we could easily find that although the numbers of unique types have little difference, the number of unigram tokens after removing stopwords is a lot less than the original number.
 
@@ -76,6 +95,12 @@
 	 To buiia a stopwords list, it is necessary to start from the dataset itself (corpus) that is used. It might be no hurt to try to use the default stopwords list first, and then the designer should select other words that have very high occurrence frequencies from related corpus.
 
 ### Word association metrics
+
+Python file used in this part: word_association.py
+
+Output file: word_association_metrics.txt
+
+______________________________________________________________________________________________________________________________________________________________________________
 
 For this part, before doing any analysis, I remove the stopwords in this corpus because I think those words are not important and they account for a large proportion of this corpus. If I keep them, it would take more time and resource to calculate the PMI values and other numbers.
 
@@ -119,17 +144,3 @@ For this part, before doing any analysis, I remove the stopwords in this corpus 
 	 PMI:  325.8864252413733 , Unigram frequency:  31251 1949 , Bigram frequencies:  1928
 	 
 	 Observed the data above, we can easily find that the bigram frequency (1928) of this word pair is very close to the unigram frequency (1949) of word "York", which means that this word is often used with "New". However, the unigram frequency (31251) of word "New" is larger almost as 16 times as the bigram frequency, and that indicates this word "New" is more common and it will be often used with other words. In this case, the PMI value of word pair "New York" is not higher.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
